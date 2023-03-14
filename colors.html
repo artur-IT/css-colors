@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zadanie 1 - zmiana koloru po najechaniu</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .red-circle,
+      .green-circle,
+      .blue-circle,
+      .yellow-circle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 3px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1;
+        transition: 1s;
+      }
+
+      .red-circle {
+        top: 30px;
+        left: 30px;
+        background-color: red;
+      }
+
+      .green-circle {
+        top: 30px;
+        right: 30px;
+        background-color: green;
+      }
+
+      .blue-circle {
+        bottom: 30px;
+        left: 30px;
+        background-color: blue;
+      }
+
+      .yellow-circle {
+        bottom: 30px;
+        right: 30px;
+        background-color: yellow;
+      }
+
+      div.bg {
+        position: relative;
+        background-color: gray;
+        height: 100vh;
+        transition: 1s;
+      }
+
+      p {
+        position: absolute;
+        font-family: Arial;
+        font-size: 40px;
+        width: 100%;
+        height: 100vh;
+        line-height: 100vh;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        transition: 1s;
+        opacity: 0;
+      }
+
+      div.red-circle:hover ~ div.bg > p.red {
+        background-color: red;
+        opacity: 1;
+      }
+      div.green-circle:hover ~ div.bg > p.green {
+        background-color: green;
+        opacity: 1;
+      }
+      div.blue-circle:hover ~ div.bg > p.blue {
+        background-color: blue;
+        opacity: 1;
+      }
+      div.yellow-circle:hover ~ div.bg > p.yellow {
+        background-color: yellow;
+        opacity: 1;
+      }
+      /* 100% I did it myself :) (2 days) */
+    </style>
+  </head>
+
+  <body>
+    <div class="red-circle"></div>
+    <div class="green-circle"></div>
+    <div class="blue-circle"></div>
+    <div class="yellow-circle"></div>
+    <div class="bg">
+      <p class="red">Czerwony</p>
+      <p class="green">Zielony</p>
+      <p class="blue">Niebieski</p>
+      <p class="yellow">Żółty</p>
+    </div>
+  </body>
+</html>
